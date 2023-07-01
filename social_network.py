@@ -22,7 +22,19 @@ if __name__ == "__main__":
 
         elif choice == "2":
             inner_menu_choice = social_network_ui.manageAccountMenu()
-            #Handle inner menu here
+            #inner menu
+            if inner_menu_choice == "1":
+                inner_menu_choice = social_network_ui.editAccount()
+            
+            elif inner_menu_choice == "2":
+                inner_menu_choice = social_network_ui.addFriend()
+            
+            elif inner_menu_choice == "3":
+                inner_menu_choice == social_network_ui.friendslist()
+            
+            elif inner_menu_choice == "4":
+                inner_menu_choice == social_network_ui.viewMessages()
+
             while True:
                 if inner_menu_choice == "5":
                     break
@@ -30,7 +42,7 @@ if __name__ == "__main__":
                     inner_menu_choice = social_network_ui.manageAccountMenu()
 
         elif choice == "3":
-            print("Thank you for visiting. Goodbye3")
+            print("Thank you for visiting. Goodbye")
             break
 
         else:
