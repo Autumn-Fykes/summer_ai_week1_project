@@ -1,21 +1,20 @@
 import hashlib
+#import json
 
 # A class to hold general system wide social media data and functions. Eg Data objects of all people, Eg functions: Save social media to disk
 class SocialNetwork:
-    def __init__(self):
-              def __init__(self, id, username, age, gender, friends, inbox, list_of_people):
-                self.id = id
-                self.name = username
-                self.year = age
-                self.gender = gender
-                self.friends = []
-                self.inbox = []
-                self.list_of_people = []
-
-    user2 = SocialNetwork(27, "Autumn", 17, "female", [12, 1980, 7])
+    def __init__(self, username, age, gender, friends = None, inbox = None, list_of_people = None):
+        self.name = username
+        self.year = age
+        self.gender = gender
+        self.friends = []
+        self.inbox = []
+        #self.list_of_people = []
+        p1 = self(27, "Autumn", 17, "female", [12], [5024]) 
+        print(p1)
         # with open('credentials.txt') as file: self.list_of_people = [line.strip() for line in file 
         # this instance variable is initialized to an empty list when social network is created, 
-                         # you can save objects of people on the network in this list
+                         # you can save objects of people on the network in this list 
     
     ## For more challenge try this
     def save_social_media(self):
@@ -33,6 +32,8 @@ class SocialNetwork:
     def  create_account(self):
         #implement function that creates account here; create instance
         username = input("Enter username: ")
+        age = input("Enter age: ")
+        gender = input("Enter gender: ")
         pwd = input("Enter password (must be more than 4 characters): ")
         conf_pwd = input("Confirm password: ")
         
@@ -44,13 +45,15 @@ class SocialNetwork:
 
         with open("credentials.txt", "w") as f:
             f.write(username + "\n")
+            f.write(age + "\n")
+            f.write(gender + "\n")
             f.write(hash1)
         f.close()
         print("Account created!")
 
 
 
-class Person(object):
+#class Person(object):
     def __init__(self, id, username, age, gender, friends, inbox):
         self.id = id
         self.name = username
@@ -58,10 +61,11 @@ class Person(object):
         self.gender = gender
         self.friends = []
         self.inbox = []
+    pass
 
-user1 = Person(27, "Autumn", 17, "female", [12, 1980]) 
+#user1 = Person(27, "Autumn", 17, "female", [12], [5024]) 
 
-print(user1)
+#print(user1)
 
 def is_friend(id1, id2):
     # if (id1 in People.friends) & (id2 in People.friends):
@@ -74,3 +78,4 @@ def is_friend(id1, id2):
     def send_message(self):
         #implement sending message to friend here; also create a block; add friend name and message
         pass
+

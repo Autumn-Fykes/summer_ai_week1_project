@@ -1,5 +1,5 @@
 #Various import Statements can go here
-from  social_network_classes import SocialNetwork,Person
+from  social_network_classes import SocialNetwork
 import social_network_ui
 
 
@@ -25,7 +25,19 @@ if __name__ == "__main__":
             #inner menu
             if inner_menu_choice == "1":
                 inner_menu_choice = social_network_ui.editAccount()
-            
+                if inner_menu_choice == "1":
+                    inner_menu_choice == social_network_ui.editUsername()
+                elif inner_menu_choice == "2":
+                    inner_menu_choice = social_network_ui.editPassword()
+                elif inner_menu_choice == "3":
+                    inner_menu_choice = social_network_ui.editAge()
+                elif inner_menu_choice == "4":
+                    inner_menu_choice = social_network_ui.editGender()
+                elif inner_menu_choice == "5":
+                    inner_menu_choice = social_network_ui.editFriendslist()
+                elif inner_menu_choice == "6":
+                    inner_menu_choice = social_network_ui.editAccount()
+
             elif inner_menu_choice == "2":
                 inner_menu_choice = social_network_ui.addFriend()
             
