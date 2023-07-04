@@ -1,18 +1,30 @@
 import hashlib
+import social_network_ui
 #import json
 
 # A class to hold general system wide social media data and functions. Eg Data objects of all people, Eg functions: Save social media to disk
 class SocialNetwork:
-    def __init__(self, username, age, gender, friends = None, inbox = None, list_of_people = None):
-        self.name = username
-        self.year = age
-        self.gender = gender
-        self.friends = []
-        self.inbox = []
-        #self.list_of_people = []
-        p1 = self(27, "Autumn", 17, "female", [12], [5024]) 
-        print(p1)
+    class People:
+        def __init__(self, username, age, gender, friends, inbox):
+            self.username = username
+            self.age = age
+            self.gender = gender
+            self.friends = friends
+            self.inbox = inbox
+        
+        def display_info(self):
+            print (f"Username: {self.username}")
+            print (f"Age: {self.age}")
+            print (f"Gender: {self.gender}")
+            print (f"Freinds: {self.friends}")
+            print (f"Inbox: {self.inbox}")
+    
+    obj = People("Autumn", 21, "Female", 128, 7357)
+
+    obj.display_info()
+
         # with open('credentials.txt') as file: self.list_of_people = [line.strip() for line in file 
+        #self.list_of_people = []
         # this instance variable is initialized to an empty list when social network is created, 
                          # you can save objects of people on the network in this list 
     

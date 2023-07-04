@@ -1,5 +1,5 @@
 # You can implement user interface functions here.
-#import social_network
+
 import hashlib
 
 def mainMenu():
